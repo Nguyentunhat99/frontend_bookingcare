@@ -34,3 +34,36 @@
     }
   }
 }
+
+.modal-container {
+    padding: 16px;
+  
+  .form-container {
+    padding: 16px;
+    
+    .heading {
+      font-size: 18px;
+    }
+    .form-content{
+      label {
+        font-size: 14px;
+        color: #aaaaaa;
+        margin: 8px 0 8px 0;
+      }
+      input {
+        width: 100%;
+        height: 30px;
+        border-radius: 3px;
+        border: none;
+        border-bottom: 1px solid #aaaaaa;
+        outline: none;
+      }
+      .password-input {
+        width: 96%;
+      }    
+      .icon-eye {
+        cursor: pointer;
+       }
+    }
+  }
+}
