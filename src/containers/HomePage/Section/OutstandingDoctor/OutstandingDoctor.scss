@@ -1,0 +1,114 @@
+.section-OutstandingDoctor-container {
+    background-color: #fff;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid #efeef5;
+    border-top: 3px solid #efeef5;
+    padding-bottom: 30px;
+    .section-OutstandingDoctor-content{
+        width: 1170px;
+        padding: 15px;    
+        .OutstandingDoctor-header {
+            width: 100%;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            .OutstandingDoctor-heading {
+                font-size: 24px;
+                font-weight: bold;
+                padding: 15px 0px 5px 0px;
+            }
+            .OutstandingDoctor-link {
+                background: #ebebeb;
+                text-transform: uppercase;
+                text-decoration: none;
+                display: block;
+                padding: 10px 15px;
+                color: #282e41;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50%;
+                font-size: 11px;
+
+                &:hover {
+                    cursor: pointer;
+                    color: #fff;
+                    background: #f7d800;
+                }
+            }
+        }
+        
+        .OutstandingDoctor-body {
+            width: 100%;
+            .OutstandingDoctor-customize {
+                width: 100%;
+                padding-right: 10px;
+                .OutstandingDoctor-contant {
+                    padding: 10px 0px 40px 0px;
+                    text-decoration: none;
+                    border: 1px solid #eee;
+                    cursor: pointer;
+                    
+                    .OutstandingDoctor-image {
+                        background: url('../../../../assets/images/105401-bsckii-tran-minh-khuyen.jpg') center center no-repeat;
+                        height: 120px;
+                        width: 120px;
+                        border-radius: 50%;
+                        background-size: cover;
+                        margin: 0 auto;
+                    }
+                    .OutstandingDoctor-info {
+                        h3 {
+                            color: #111;
+                            padding: 10px 0 0 0;
+                            font-size: 13px;
+                            text-align: center;
+                            margin: 0;
+                        }
+                        h4 {
+                            color: #111;
+                            font-size: 13px;
+                            text-align: center;
+                            margin: 0;
+                        }
+                    }
+                    &:hover .OutstandingDoctor-info {     
+                        h3, h4{
+                            color: lightblue;
+                        }
+                        
+                    }     
+                }
+            }
+        }
+    }
+
+}
+
+
+
+.slick-prev {
+    z-index: 1000;
+    top: 80px !important;
+    left: -25px !important;
+}
+
+.slick-prev::before,
+.slick-next::before{
+    padding: 5px 5px 5px 0;
+    font-size: 40px !important;
+    color: rgb(82, 80, 80) !important;
+    background-color: rgb(255, 255, 255) !important;
+    opacity: 0.5 !important;
+    padding: 5px 5px 0px 5px !important;
+    border: 2px solid rgb(134, 134, 134) !important;
+}
+.slick-next {
+    top: 80px !important;
+    right: 15px !important;
+    &:hover {
+        opacity: 0.9 !important;
+    }
+}

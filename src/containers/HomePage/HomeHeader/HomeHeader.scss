@@ -3,6 +3,10 @@
     padding: 10px 0 10px 0;
     width: 100%;
     background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    border: 1px solid #efeef5;
     .homeheader-content {
         width: 1156px;
         height: 57px;
@@ -122,6 +126,7 @@
     width: 100%;
     background-size: cover;
     padding-top: 77px;   
+    margin-top: 77px;
     .title {
         text-align: center;
         color: #fff;

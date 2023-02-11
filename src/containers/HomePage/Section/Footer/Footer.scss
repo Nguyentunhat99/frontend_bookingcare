@@ -1,0 +1,22 @@
+.section-Footer-container {
+    background: #64b9e5;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+
+    .section-Footer-content {
+        width: 1170px;
+        display: flex;
+        justify-content: space-between;
+        small {
+            color: #fff;
+        }
+        .Footer-link {
+            width: fit-content;
+            a {
+                margin: 0px 5px;
+            }
+        }
+    }
+}

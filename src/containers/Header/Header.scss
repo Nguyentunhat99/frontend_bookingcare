@@ -20,4 +20,21 @@
             font-size: $base-size + 1px;
         }
     }
+    .languages {
+        .language-vn {
+            cursor: pointer;
+            &.active {
+                font-size: 16px;
+                color: yellow;
+            }
+        }
+        .language-en {
+            margin: 0px 15px 0px 10px;
+            cursor: pointer;
+            &.active {
+                font-size: 16px;
+                color: yellow;
+            }
+        }
+    }
 }

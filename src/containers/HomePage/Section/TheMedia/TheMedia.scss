@@ -1,0 +1,66 @@
+.section-TheMedia-container {
+    padding-bottom: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px solid #efeef5;
+    border-top: 3px solid #efeef5;
+
+    .section-TheMedia-content {
+        width: 1170px;
+        padding: 15px;
+        
+        .TheMedia-heading {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 0px 5px 0px !important;
+            margin-bottom: 25px !important;
+        }
+        .TheMedia-body {
+            width: 100%;
+            display: flex;
+            .TheMedia-video {
+                width: 50%;
+            }
+            .TheMedia-media {
+                width: 50%;
+                padding: 10px 50px;
+            }
+            .TheMedia-list {
+                width: 100%;
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                .TheMedia-item {
+                    // width: 28%;
+                    margin-bottom: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .TheMedia-skds {
+                    background: url('../../../../assets/images/suckhoedoisong.png') center center no-repeat;
+                    height: 50px;
+                    width: 162px;
+                    padding: 15px;
+                    background-size: 142px 30px;
+                }
+                .TheMedia-cpknvtv1 {
+                    background: url('../../../../assets/images/vtv1.png') center center no-repeat;
+                    height: 50px;
+                    width: 106px;
+                    padding: 15px;
+                    background-size: 100px 30px;
+                }
+
+                .TheMedia-ictnews {
+                    background: url('../../../../assets/images/ictnews.png') center center no-repeat;
+                    height: 50px;
+                    width: 127px;
+                    padding: 15px;
+                    background-size: 100px 30px;
+                }
+            }
+        }
+    }
+}
