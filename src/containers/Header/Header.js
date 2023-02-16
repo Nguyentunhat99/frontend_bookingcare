@@ -15,7 +15,8 @@ class Header extends Component {
     this.props.changeLanguageAppRedux(language);//truy cap hafm cua redux thong qua cau lenh this.props 
     }
     render() {
-        const { processLogout, language } = this.props;
+        const { processLogout, language , userInfo } = this.props;
+        console.log(userInfo);
         return (
             <div className="header-container">
                 {/* thanh navigator */}
@@ -23,6 +24,9 @@ class Header extends Component {
                     <Navigator menus={adminMenu} />
                 </div>
                 <div className='languages'>
+                    <span className='welcome'>
+                        <FormattedMessage id="homeheader.Welcome" />    
+                        , {userInfo && userInfo.firstName ? userInfo.firstName : ""} !</span>
                     <span
                         className={language === LANGUAGES.VI ? 'language-vn active' : 'language-vn'}                       
                         onClick={() =>{this.changeLanguage(LANGUAGES.VI)}}>VN</span>
@@ -43,6 +47,7 @@ class Header extends Component {
 const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
+        userInfo: state.user.userInfo,//lay thong tin user tu redux cx luu trong local storage
         language: state.app.language, //la tu redux sau khi setstate
 
     };

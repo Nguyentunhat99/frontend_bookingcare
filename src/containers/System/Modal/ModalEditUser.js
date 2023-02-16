@@ -109,10 +109,10 @@ class ModalEdittUser extends Component {
             >
                 <ModalHeader toggle={() => {this.toggle()}}>Update User</ModalHeader>
                 <ModalBody>
-                    <div className="form-container">
-                        <div className="form-row">
+                    <div className="container">
+                        <div className="row">
                             <div className="col-12 text-center heading"><b>Update user:</b></div>
-                            <form>
+                            <form style={{width:'100%'}}>
                                 <div className="form-container">
                                     <div className="form-content">
                                         <label htmlFor="">First name (*):</label><br />

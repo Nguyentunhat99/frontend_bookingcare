@@ -103,10 +103,14 @@ class ModalUser extends Component {
             >
                 <ModalHeader toggle={() => {this.toggle()}}>Create New User</ModalHeader>
                 <ModalBody>
-                    <div className="form-container" onClick={() => {this.handlefocusInput()}}>
+                    <div 
+                        className="form-container"
+                        onClick={() => {this.handlefocusInput()}}>
                         <div className="form-row">
                             <div className="col-12 text-center heading"><b>Create a new user:</b></div>
-                            <form>
+                            <form
+                                style={{width:'100%'}}
+                            >
                                 <div className="form-container">
                                     <div className="form-content">
                                         <label htmlFor="">First name (*):</label><br />

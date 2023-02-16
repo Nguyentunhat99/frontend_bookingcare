@@ -19,7 +19,8 @@ class Login extends Component {
         }
     }
 
-    handleLogin = async () => {
+    handleLogin = async (e) => {
+        e.preventDefault();
         this.setState({//trc khi request thi xoa loi cu
             errMessage:''
         })
@@ -56,39 +57,41 @@ class Login extends Component {
             <div className='login-background'>
                 <div className='login-container'>
                     <div className='login-content row'>
-                        <div className='col-12 text-center text-heading'>Login</div>
-                        <div className='col-12 form-group  bottom-line'>
-                            <label className='text-label'>Username:</label>
-                            <input 
-                                type='email' 
-                                placeholder='Enter your username' 
-                                className='form-control form-input' 
-                                value={this.state.username}
-                                onChange={(e) => this.setState({username: e.target.value})}
-                                />
-                        </div>
-                        <div className='col-12 form-group bottom-line'>
-                            <label className='text-label'>Password:</label>
-                            <div>
+                        <form onSubmit={(e) => this.handleLogin(e)} style={{width:'100%'}}>
+                            <div className='col-12 text-center text-heading'>Login</div>
+                            <div className='col-12 form-group  bottom-line'>
+                                <label className='text-label'>Username:</label>
                                 <input 
-                                    type={this.state.isShowPassword?'text':'password'} 
-                                    placeholder='Enter your password' 
-                                    className='form-control form-input form-password'  
-                                    value={this.state.password}
-                                    onChange={(e) => { this.setState({ password: e.target.value })} }
-                                />
-                                
-                                {this.state.password === ''?'':
-                                <span onClick={() => this.handleShowHidePassword()}><i className={this.state.isShowPassword?'far fa-eye icon-eye':'far fa-eye-slash icon-eye'}></i></span>
-                                }
+                                    type='email' 
+                                    placeholder='Enter your username' 
+                                    className='form-control form-input' 
+                                    value={this.state.username}
+                                    onChange={(e) => this.setState({username: e.target.value})}
+                                    />
                             </div>
-                        </div>
-                        <div className='col-12'>
-                            <p style={{color:'red'}}>{this.state.errMessage}</p>
-                        </div>
-                        <div className='col-12'>
-                            <button className='btn-login' onClick={() => this.handleLogin()}>Login</button>
-                        </div>
+                            <div className='col-12 form-group bottom-line'>
+                                <label className='text-label'>Password:</label>
+                                <div>
+                                    <input 
+                                        type={this.state.isShowPassword?'text':'password'} 
+                                        placeholder='Enter your password' 
+                                        className='form-control form-input form-password'  
+                                        value={this.state.password}
+                                        onChange={(e) => { this.setState({ password: e.target.value })} }
+                                    />
+                                    
+                                    {this.state.password === ''?'':
+                                    <span onClick={() => this.handleShowHidePassword()}><i className={this.state.isShowPassword?'far fa-eye icon-eye':'far fa-eye-slash icon-eye'}></i></span>
+                                    }
+                                </div>
+                            </div>
+                            <div className='col-12'>
+                                <p style={{color:'red'}}>{this.state.errMessage}</p>
+                            </div>
+                            <div className='col-12'>
+                                <button className='btn-login' type='submit'>Login</button>
+                            </div>
+                        </form>
                         <div className='col-12'>
                             <span className='forgot-pass'>Forgot your password</span>
                         </div>

@@ -10,7 +10,9 @@ export const getAllUsers = (inputId)=>{
 }
 
 export const createNewUserService = (data) => {
-    return axios.post(`/api/v1/createNewUser`, data)
+    console.log('data:',data);
+
+    return axios.post('/api/v1/createNewUser', data)
 }
 export const deleteUserService = (userId)=>{
     // console.log('input id',id);
@@ -24,6 +26,11 @@ export const deleteUserService = (userId)=>{
 export const UpdateUserService = (data)=>{
     // console.log('input id',id);
     return axios.put('/api/v1/updateUser', data)
+}
+
+
+export const getAllCodeService = (inputType)=>{
+    return axios.get(`/api/v1/allCode?type=${inputType}`)
 }
 //Call api
 
