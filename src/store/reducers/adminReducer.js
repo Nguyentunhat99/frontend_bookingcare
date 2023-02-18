@@ -4,7 +4,9 @@ const initialState = {//state cua redux
     genders: [],
     roles:[],
     positions:[],
-    isLoadingGender: false
+    isLoadingGender: false,
+    usersData:[],
+    deleteUserId: ''
 }
 
 const adminReducer = (state = initialState, action) => {
@@ -44,6 +46,16 @@ const adminReducer = (state = initialState, action) => {
             }
         case actionTypes.FETCH_ROLE_FAILED:
             state.roles = [];
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_ALL_USER_SUCCESS:
+            state.usersData = action.data;//luu date vao state copy
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_ALL_USER_FAILED:
+            state.genders = [];
             return {
                 ...state,
             }

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 // import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import { LANGUAGES } from '../../../utils';
+import { LANGUAGES, CRUD_ACTIONS } from '../../../utils';
 import * as actions from "../../../store/actions";
 import './UserRedux.scss'
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import { FormattedMessage } from 'react-intl';
-
-class UserProduct extends Component {
+import TableUserManage from './TableUserManage';
+class UserRedux extends Component {
 
     constructor(props) {
         super(props) ;
@@ -18,16 +18,12 @@ class UserProduct extends Component {
                 previewImgURL:'',
                 isOpen:false,
                 isShowPassword: false,
-                email:'',
-                password:'',
-                firstName:'',
-                lastName:'',
-                phonenumber:'',
-                address:'',
                 gender:'',
                 position:'',
                 role:'',
                 avatar:'',
+                action:'',
+                userId:''
             }
     }
 
@@ -35,6 +31,7 @@ class UserProduct extends Component {
         this.props.getGenderStart();
         this.props.getPositionStart();  
         this.props.getRoleStart();  
+        this.props.editUserStart();  
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {//cap nhat state
@@ -117,11 +114,12 @@ class UserProduct extends Component {
         })
     }    
 
-    handleAddNewUserRedux = () => {
-        console.log('check state:', this.state);        
+    handleAddNewUserRedux = () => {        
         let isValid = this.checkValidateInput();
-        if(isValid === true) {
-            this.props.createNewUser({
+        if(isValid === false) return;
+        let {action} = this.state; //<=> let action = this.state.action
+        if(action === CRUD_ACTIONS.CREATE){
+            this.props.createNewUser({//fire redux create úser
                 email: this.state.email, 
                 password: this.state.password,
                 firstName: this.state.firstName, 
@@ -131,9 +129,57 @@ class UserProduct extends Component {
                 gender: this.state.gender, 
                 roleId: this.state.role,
                 positionId: this.state.position,
-            }                
-            );//goij toi tk cha/ tryten dl state u con sang chaa
+            });//goij toi tk cha/ tryten dl state u con sang chaa            
+        };
+        if(action === CRUD_ACTIONS.EDIT){
+            this.props.editUserStart({
+                id: this.state.userId,
+                email: this.state.email, 
+                password: this.state.password,
+                firstName: this.state.firstName, 
+                lastName: this.state.lastName, 
+                address: this.state.address, 
+                phonenumber: this.state.phonenumber,  
+                gender: this.state.gender, 
+                roleId: this.state.role,
+                positionId: this.state.position,          
+            });  
         }
+        let arrRoles = this.props.roleRedux
+        let arrGenders = this.props.genderRedux
+        let arrPositions = this.props.positionRedux
+           this.setState({
+            email:'',
+            password:'',
+            firstName:'',
+            lastName:'',
+            phonenumber:'',
+            avatar:'',
+            address:'',
+            position: arrPositions && arrPositions.length>0 ? arrPositions[0].key :'',
+            gender: arrGenders && arrGenders.length>0 ? arrGenders[0].key :'',
+            role: arrRoles && arrRoles.length>0 ? arrRoles[0].key :'',
+            action: CRUD_ACTIONS.CREATE
+        })
+        this.props.getAllUsersStart();
+    }
+
+    handleUpdateUser = async (data) => {
+        console.log('data user update', data);
+            this.setState({
+                email:data.email,
+                password:'Hard code',
+                firstName:data.firstName,
+                lastName:data.lastName,
+                phonenumber:data.phonenumber,
+                avatar:data.avatar,
+                address:data.address,
+                position: data.positionid,
+                gender: data.gender,
+                role: data.roleid,
+                action: CRUD_ACTIONS.EDIT,
+                userId: data.id,
+            })
     }
 
     render() {
@@ -145,7 +191,7 @@ class UserProduct extends Component {
         let isLoadingGender = this.props.isLoadingGender;
         console.log('check isLoadingGender:', this.props.isLoadingGender); 
 
-        let {email,password,firstName,lastName,phonenumber,address,isOpen,isShowPassword,previewImgURL, avatar} = this.state;
+        let {email,password,firstName,lastName,phonenumber,address,isOpen,role,position,gender,isShowPassword,previewImgURL, avatar} = this.state;
 
         return (
             <div>
@@ -165,6 +211,7 @@ class UserProduct extends Component {
                                         type="email" 
                                         name="email"
                                         value={email}
+                                        disabled={this.state.action === CRUD_ACTIONS.EDIT}
                                         onChange={(e) => { this.handleOnchangeInput(e, 'email')} }
                                     />
                                 </div>
@@ -177,6 +224,7 @@ class UserProduct extends Component {
                                         type={isShowPassword?'text':'password'} 
                                         name="password"
                                         value={password}
+                                        disabled={this.state.action === CRUD_ACTIONS.EDIT}
                                         onChange={(e) => { this.handleOnchangeInput(e, 'password')} }
                                     />
                                     {password === ''?'':
@@ -208,7 +256,7 @@ class UserProduct extends Component {
                                     />
                                 </div>
                             </div>
-                            <div className="form-row">
+                            <div className="row">
                                 <div className="form-group col-3">
                                     <label htmlFor="">
                                         <FormattedMessage id="menu.admin.Phonenumber" />
@@ -234,7 +282,7 @@ class UserProduct extends Component {
                                     />
                                 </div>                                
                             </div>
-                            <div className='form-row'>
+                            <div className='row'>
                                 <div className="form-group col-3">
                                     <label htmlFor="">
                                         <FormattedMessage id="menu.admin.Gender" />
@@ -243,6 +291,7 @@ class UserProduct extends Component {
                                         className="form-control" 
                                         name="gender" id=""
                                         onChange={(e) => { this.handleOnchangeInput(e, 'gender')} }
+                                        value={gender} 
                                     >
                                         {genders && genders.length && genders.map((gender,index)=> {
                                             return (
@@ -259,6 +308,7 @@ class UserProduct extends Component {
                                         className="form-control" 
                                         name="roleid" id=""
                                         onChange={(e) => { this.handleOnchangeInput(e, 'position')} }
+                                        value={position}
                                     >
                                         {positions && positions.length && positions.map((position,index)=> {
                                             return (
@@ -275,6 +325,7 @@ class UserProduct extends Component {
                                         className="form-control" 
                                         name="roleid" id=""
                                         onChange={(e) => { this.handleOnchangeInput(e, 'role')} }
+                                        value={role}
                                     >
                                         {roles && roles.length && roles.map((role,index)=> {
                                             return (
@@ -308,19 +359,25 @@ class UserProduct extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className='form-row mt-2'>
-                                <div className='form-group col-3'>
-                                    <div className="form-group col-12">
-                                        <button 
-                                            type="submit" className="btn btn-primary"
-                                            onClick={()=>this.handleAddNewUserRedux()}
-                                        >
-                                            <FormattedMessage id="menu.admin.Add" />
-                                        </button>
-                                    </div>
-                                </div>
+                            <div className='form-group col-12'>
+                                <button 
+                                    className={this.state.action === CRUD_ACTIONS.EDIT ?
+                                    "btn btn-warning" : "btn btn-primary" 
+                                    }
+                                    type="submit"
+                                    onClick={()=>this.handleAddNewUserRedux()}
+                                >
+                                    {this.state.action === CRUD_ACTIONS.EDIT 
+                                    ?<FormattedMessage id="menu.admin.Edit" />
+                                    : <FormattedMessage id="menu.admin.Add" />
+                                    }
+                                </button>
                             </div>
                         </div>
+                        <TableUserManage 
+                            handleUpdateUser = {this.handleUpdateUser}
+                            action = {this.state.action}
+                        />
                     </div>
                     {isOpen === true &&
                         <Lightbox
@@ -330,6 +387,7 @@ class UserProduct extends Component {
                     
                     }
                 </div>
+
             </div>
         )
     }
@@ -356,10 +414,13 @@ const mapDispatchToProps = dispatch => {
 
         createNewUser: (data) => dispatch(actions.createNewUser(data)),//fire action
 
+        getAllUsersStart: () => dispatch(actions.fetchAllUsersStart()),//fire action
+
+        editUserStart: (data) => dispatch(actions.editUserStart(data)),//fire action
 
         // processLogout: () => dispatch(actions.processLogout()),
         // changeLanguageAppRedux: (language) => dispatch(actions.changeLanguageApp(language))//fire action cua redux co ten la changeLanguageApp
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(UserRedux);

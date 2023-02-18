@@ -42,7 +42,7 @@
           "manage-admin": "Quản lý admin",
           "crud": "CRUD user",
           "crud-redux": "CRUD Redux",
-          "clinic":"Phòng khám",
+          "clinic": "Phòng khám",
           "manage-clinic": "Quản lý phòng khám",
           "specialty": "Chuyên khoa",
           "manage-specialty": "Quản lý huyên khoa",
@@ -51,16 +51,16 @@
           "Password": "Mật khẩu",
           "Firstname": "Tên",
           "Lastname": "Họ",
-          "Phonenumber":"Số điện thoại",
+          "Phonenumber": "Số điện thoại",
           "Address": "Địa chỉ",
           "Gender": "Giới tính",
           "Position": "Chức vụ",
           "Role": "Vai trò",
           "Add": "Thêm",
+          "Edit": "Lưu thay đổi",
           "Avatar": "Ảnh đại diện",
-          "Upload_image":"Tải ảnh lên",
-          "Add_new_user":"Thêm người dùng mới"
-
+          "Upload_image": "Tải ảnh lên",
+          "Add_new_user": "Thêm người dùng mới"
         }
     }
 }
