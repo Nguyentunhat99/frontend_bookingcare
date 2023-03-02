@@ -1,1 +1,31 @@
 @import "../../styles/common.scss";
+
+.slick-prev {
+    z-index: 1000;
+    top: 80px !important;
+    left: -25px !important;
+}
+
+
+.slick-prev::before,
+.slick-next::before {
+    padding: 5px 5px 5px 0;
+    font-size: 40px !important;
+    color: rgb(134, 134, 134) !important;
+    background-color: rgb(255, 255, 255) !important;
+    // opacity: 0.5 !important;
+    padding: 5px 5px 0px 5px !important;
+    border: 1px solid rgb(134, 134, 134) !important;
+}
+
+.slick-next {
+    top: 80px !important;
+    right: 15px !important;
+
+    &:hover {
+        opacity: 0.9 !important;
+    }
+}
+.slick-disabled {
+    display: none !important;
+}

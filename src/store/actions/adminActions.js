@@ -1,5 +1,10 @@
 import actionTypes from './actionTypes';
-import { createNewUserService, getAllCodeService, getAllUsers, deleteUserService, UpdateUserService } from '../../services/userService';
+import { createNewUserService, 
+        getAllCodeService, 
+        getAllUsers, 
+        deleteUserService, 
+        UpdateUserService,
+    } from '../../services/userService';
 import { toast } from 'react-toastify';
 // export const fetchGenderStart = () => ({
 //     type: actionTypes.FETCH_GENDER_START
@@ -96,14 +101,13 @@ export const createNewUser = (data) => {
                 dispatch(createNewUserSuccess());
                 dispatch(fetchAllUsersStart());
             } else {
-                toast.error('Create user failed');
+                toast.error(res.errMessage);
                 dispatch(createNewUserFailed());
             }
         } catch (error) {
             toast.error('Create user failed');
             dispatch(createNewUserFailed())
             console.log('createNewUser error:',error);
-            
         }
     }
 }
@@ -120,7 +124,7 @@ export const fetchAllUsersStart = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getAllUsers("ALL");//lay du lieu
-            console.log('res',res.users);
+            // console.log('res',res.users);
             if( res && res.errCode === 0) {
                 dispatch(fetchAllUsersSuccess(res.users.reverse()));
             } else {
@@ -178,7 +182,6 @@ export const editUserStart = (data) => {
     return async (dispatch, getState) => {
         try {
             let res = await UpdateUserService(data);//lay du lieu
-            console.log('res',res);
             if( res && res.errCode === 0) {
                 toast.success(res.errMessage);
                 dispatch(editUserSuccess());

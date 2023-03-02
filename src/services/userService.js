@@ -32,5 +32,18 @@ export const UpdateUserService = (data)=>{
 export const getAllCodeService = (inputType)=>{
     return axios.get(`/api/v1/allCode?type=${inputType}`)
 }
+
+export const getTopDoctorHomeService = (limit) => {
+    return axios.get(`/api/v1/top-doctor-home?limit=${limit}`)
+}
+
+export const getAllDoctorService = () => {
+    return axios.get('/api/v1/get-all-doctor')
+}
+
+export const saveDetailInforDoctorService = (data) => {
+    console.log('data:',data);
+    return axios.post('/api/v1/detail-infor-doctor', data)
+}
 //Call api
 

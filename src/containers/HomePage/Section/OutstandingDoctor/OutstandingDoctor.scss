@@ -52,7 +52,7 @@
                     cursor: pointer;
                     
                     .OutstandingDoctor-image {
-                        background: url('../../../../assets/images/105401-bsckii-tran-minh-khuyen.jpg') center center no-repeat;
+                        background: center center no-repeat;
                         height: 120px;
                         width: 120px;
                         border-radius: 50%;
@@ -89,26 +89,3 @@
 
 
 
-.slick-prev {
-    z-index: 1000;
-    top: 80px !important;
-    left: -25px !important;
-}
-
-.slick-prev::before,
-.slick-next::before{
-    padding: 5px 5px 5px 0;
-    font-size: 40px !important;
-    color: rgb(82, 80, 80) !important;
-    background-color: rgb(255, 255, 255) !important;
-    opacity: 0.5 !important;
-    padding: 5px 5px 0px 5px !important;
-    border: 2px solid rgb(134, 134, 134) !important;
-}
-.slick-next {
-    top: 80px !important;
-    right: 15px !important;
-    &:hover {
-        opacity: 0.9 !important;
-    }
-}

@@ -1,8 +1,8 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 // import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalFooter } from 'reactstrap';
 class ModalUser extends Component {
 
     constructor(props){
@@ -76,5 +76,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalUser);
+
 
 

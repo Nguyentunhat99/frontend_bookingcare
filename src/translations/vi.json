@@ -16,12 +16,21 @@
       "Remote_examination": "Khám từ xa",
       "General_examination": "Khám tổng quát",
       "Medical_test": "Xét nghiệm y học",
-      "Mental_health":"Sức khỏe tinh thần",
-      "Dental_examination":"Khám nha khoa",
-      "Surgery_pack":"Gói phẫu thuật",
-      "Medical_products":"Sản phẩm y tế",
-      "Business_health":"Sức khỏe doanh nghiệp",
-      "Welcome":"Xin chào"
+      "Mental_health": "Sức khỏe tinh thần",
+      "Dental_examination": "Khám nha khoa",
+      "Surgery_pack": "Gói phẫu thuật",
+      "Medical_products": "Sản phẩm y tế",
+      "Business_health": "Sức khỏe doanh nghiệp",
+      "Welcome": "Xin chào",
+      "Popular_specialty": "Chuyên khoa phổ biến",
+      "See_more": "Xem thêm",
+      "The_famous_doctor_last_week": "Bác sĩ nổi bật tuần qua",
+      "Search": "Tìm kiếm",
+      "Doctors_MedicalFacilities": "Dành cho bác sĩ và cơ sở y tế",
+      "Post": "Bài viết",
+      "cooperate": "Hợp tác",
+      "Contact": "Liên hệ",
+      "Media": "Truyền thông nói về chúng tôi"
     },
     "menu": {
         "system": {

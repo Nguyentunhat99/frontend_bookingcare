@@ -19,11 +19,11 @@ class HomeHeader extends Component {
                     <div className='homeheader-content'>
                         <div className='content-left'>
                             <i className='fas fa-bars header-icon'></i>
-                            <a href=''><div className='header-logo'></div></a>
+                            <a href='#'><div className='header-logo'></div></a>
                         </div>
                         <div className='content-center'>
                             <div className='header-menu'>
-                                <a href='' className=''>
+                                <a href='#' className=''>
                                     <FormattedMessage id='homeheader.speciality'/>
                                     
                                     <span clasname=''>
@@ -32,7 +32,7 @@ class HomeHeader extends Component {
                                 </a>
                             </div>
                             <div className='header-menu'>
-                                <a href='' className=''>
+                                <a href='#' className=''>
                                     <FormattedMessage id='homeheader.healthfacilities'/>
                                     <span clasname=''>
                                         <FormattedMessage id='homeheader.choosehospitalclinic'/>                                       
@@ -40,7 +40,7 @@ class HomeHeader extends Component {
                                 </a>
                             </div>
                             <div className='header-menu'>
-                                <a href='' className=''>
+                                <a href='#' className=''>
                                     <FormattedMessage id='homeheader.doctor'/>
                                     <span clasname=''>
                                         <FormattedMessage id='homeheader.Chooseagooddoctor'/>
@@ -48,7 +48,7 @@ class HomeHeader extends Component {
                                 </a>
                             </div>
                             <div className='header-menu'>
-                                <a href='' className=''>
+                                <a href='#' className=''>
                                     <FormattedMessage id='homeheader.examinationpackage'/>
                                     <span clasname=''>
                                         <FormattedMessage id='homeheader.generalhealthcheck'/>  
@@ -58,7 +58,7 @@ class HomeHeader extends Component {
                         </div>
                         <div className='content-right'>
                             <div className='header-support'>
-                                <a href=''>
+                                <a href='#'>
                                     <i className='fas fa-question-circle icon-question'></i>
                                     <span><FormattedMessage id='homeheader.support' /></span>
                                 </a >
@@ -79,55 +79,55 @@ class HomeHeader extends Component {
                     </div>
                     <div className='options'>
                         <div className='option-item'>
-                            <a href=''>
+                            <a href='#'>
                                 <div className='icon-ck'></div>
                                 <FormattedMessage id='homeheader.examination_specialist'/>
                             </a>
                         </div>
                         <div className='option-item'>
-                            <a href=''>
+                            <a href='#'>
                                 <div className='icon-ktx'></div>
                                 <FormattedMessage id='homeheader.Remote_examination'/>
                             </a>
                         </div>
                         <div className='option-item'>
-                            <a href=''>
+                            <a href='#'>
                                 <div className='icon-ktq'></div>
                                 <FormattedMessage id='homeheader.General_examination'/>
                             </a>
                         </div>
                         <div className='option-item'>
-                            <a href=''>
+                            <a href='#'>
                                 <div className='icon-xnyh'></div>
                                 <FormattedMessage id='homeheader.Medical_test'/>
                             </a>
                         </div>
                         <div className='option-item'>
-                            <a href=''>
+                            <a href='#'>
                                 <div className='icon-sktt'></div>
                                 <FormattedMessage id='homeheader.Mental_health'/>
                             </a>
                         </div>
                         <div className='option-item'>
-                            <a href=''>
+                            <a href='#'>
                                 <div className='icon-knk'></div>
                                 <FormattedMessage id='homeheader.Dental_examination'/>
                             </a>
                         </div>
                         <div className='option-item'>
-                            <a href=''>
+                            <a href='#'>
                                 <div className='icon-gpt'></div>
                                 <FormattedMessage id='homeheader.Surgery_pack'/>
                             </a>
                         </div>
                         <div className='option-item'>
-                            <a href=''>
+                            <a href='#'>
                                 <div className='icon-spyt'></div>
                                 <FormattedMessage id='homeheader.Medical_products'/>
                             </a>
                         </div>
                         <div className='option-item'>
-                            <a href=''>
+                            <a href='#'>
                                 <div className='icon-skdn'></div>
                                 <FormattedMessage id='homeheader.Business_health'/>
                             </a>

@@ -21,7 +21,17 @@
     "Surgery_pack": "Surgery pack",
     "Medical_products": "Medical products",
     "Business_health": "Business health",
-    "Welcome":"Welcome"
+    "Welcome":"Welcome",      
+    "Popular_specialty":"Popular specialty",
+    "See_more":"See more",
+    "The_famous_doctor_last_week":"The famous doctor last week",
+    "Search":"Search",
+    "Doctors_MedicalFacilities":"For doctors and medical facilities",
+    "Post":"Post",
+    "cooperate":"cooperate",
+    "Contact":"Contact",
+    "All_posts":"All posts",
+    "Media":"Media"
   },
   "menu": {
     "system": {

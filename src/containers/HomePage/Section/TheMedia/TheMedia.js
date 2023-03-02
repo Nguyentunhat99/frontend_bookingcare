@@ -8,7 +8,7 @@ class TheMedia extends Component {
         return(
             <div className='section-TheMedia-container'>
                 <div className="section-TheMedia-content">
-                    <h2 className='TheMedia-heading'>Cơ sở y tế</h2>
+                    <h2 className='TheMedia-heading'><FormattedMessage id='homeheader.Media'/></h2>
                     <div className='TheMedia-body'>
                         <div className='TheMedia-video'>
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/FyDQljKtWnI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
@@ -21,7 +21,7 @@ class TheMedia extends Component {
                                     </a>
                                 </div>
                                 <div className='TheMedia-item'>
-                                    <a target="_blank" title="VTV1 - Cà phê khởi nghiệp 14-11-2018" href="https://vtv.vn/video/ca-phe-khoi-nghiep-14-11-2018-334894.htm">
+                                    <a target='_blank' title="VTV1 - Cà phê khởi nghiệp 14-11-2018" href="https://vtv.vn/video/ca-phe-khoi-nghiep-14-11-2018-334894.htm">
                                         <div className='TheMedia-cpknvtv1'></div>
                                     </a>
                                 </div>
