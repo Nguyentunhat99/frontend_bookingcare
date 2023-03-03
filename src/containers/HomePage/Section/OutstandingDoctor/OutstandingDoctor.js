@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './OutstandingDoctor.scss';
 import { FormattedMessage } from 'react-intl';
 import * as actions from "../../../../store/actions"
-
 // slick
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -11,7 +11,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { LANGUAGES } from '../../../../utils';
 
 class OutstandingDoctor extends Component {
-
     constructor(props) {
         super(props) ;
             this.state = {
@@ -38,7 +37,9 @@ class OutstandingDoctor extends Component {
             })
         }
     }
-    
+    handleViewDeatilDoctor= (doctor) => {
+        this.props.history.push(`/detail-doctor/${doctor.id}`); 
+    }
     render() {
         let settings = {
             dots: false,
@@ -91,9 +92,9 @@ class OutstandingDoctor extends Component {
                                 imageBase64 = new Buffer(doctor.image, 'base64').toString('binary');
                             }
                                 let nameVi = `${doctor.positionData.valueVi}, ${doctor.firstName} ${doctor.lastName}`;
-                                let nameEn = `${doctor.positionData.valueEn}, ${doctor.firstName} ${doctor.lastName}`;
+                                let nameEn = `${doctor.positionData.valueEn}, ${doctor.lastName} ${doctor.firstName}`;
                                 return (
-                                    <div className='OutstandingDoctor-customize' key={index}>
+                                    <div className='OutstandingDoctor-customize' key={index} onClick={()=> this.handleViewDeatilDoctor(doctor)}>
                                         <div className='OutstandingDoctor-contant'>
                                             <div className='OutstandingDoctor-image'
                                                 style={{ backgroundImage:`url(${imageBase64})`}}
@@ -128,4 +129,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor));

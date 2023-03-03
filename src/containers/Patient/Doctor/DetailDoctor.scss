@@ -1,0 +1,56 @@
+.detail-doctor-container {
+    height: 500px;
+    margin-top: 76px;
+    border: 1px solid black;
+    padding-top: 15px;
+
+    .intro-doctor {
+        .intro-doctor-content {
+            width: 1170px;
+            padding: 15px;
+            margin: 0 auto;
+            display: flex;
+
+            .intro-doctor-image {
+                background: center center no-repeat;
+                height: 120px;
+                width: 120px;
+                background-size: cover;
+                border-radius: 50%;
+            }
+
+            .intro-doctor-quickview {
+                width: 600px;
+                padding-left: 15px;
+    
+                .intro-doctor-name {
+                    font-size: 27px;
+                    margin-bottom: 10px;
+                    line-height: 1.2;
+                    font-weight: bold;
+                    color: #333;
+                }
+                .intro-doctor-summary{
+                    color: #555;
+                    font-size: 13px;
+                        
+                }
+            }
+        }
+    }
+    .examination-schedule {
+
+    }
+    .detail-infor-doctor {
+        border-top: 1px solid #ccc;
+        background-color: #f9f9f9;
+        .detail-infor-doctor-content {
+            width: 1170px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+    }
+    .feedback {
+
+    }
+}

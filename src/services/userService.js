@@ -45,5 +45,9 @@ export const saveDetailInforDoctorService = (data) => {
     console.log('data:',data);
     return axios.post('/api/v1/detail-infor-doctor', data)
 }
-//Call api
 
+export const getDetailInforDoctorByIdService = (id) => {
+    console.log('detail infor doctor by id:',id);
+    return axios.get(`/api/v1/get-detail-infor-doctor-by-id?id=${id}`)
+}
+//Call api

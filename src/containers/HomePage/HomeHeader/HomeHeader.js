@@ -70,70 +70,72 @@ class HomeHeader extends Component {
                         </div>
                     </div >
                 </div>
-                <div className='homeheader-banner'>
-                    <h1 className='title title-one'><FormattedMessage id='homeheader.medicalbackground'/></h1>
-                    <h1 className='title title-two'><FormattedMessage id='homeheader.comprehensivehealthcare'/></h1>
-                    <div className='search'>
-                        <i className='fas fa-search icon-search'></i>
-                        <input type='text' className='search-input' placeholder='Search...' />
+                {this.props.isShowBanner === true &&
+                    <div className='homeheader-banner'>
+                        <h1 className='title title-one'><FormattedMessage id='homeheader.medicalbackground'/></h1>
+                        <h1 className='title title-two'><FormattedMessage id='homeheader.comprehensivehealthcare'/></h1>
+                        <div className='search'>
+                            <i className='fas fa-search icon-search'></i>
+                            <input type='text' className='search-input' placeholder='Search...' />
+                        </div>
+                        <div className='options'>
+                            <div className='option-item'>
+                                <a href='#'>
+                                    <div className='icon-ck'></div>
+                                    <FormattedMessage id='homeheader.examination_specialist'/>
+                                </a>
+                            </div>
+                            <div className='option-item'>
+                                <a href='#'>
+                                    <div className='icon-ktx'></div>
+                                    <FormattedMessage id='homeheader.Remote_examination'/>
+                                </a>
+                            </div>
+                            <div className='option-item'>
+                                <a href='#'>
+                                    <div className='icon-ktq'></div>
+                                    <FormattedMessage id='homeheader.General_examination'/>
+                                </a>
+                            </div>
+                            <div className='option-item'>
+                                <a href='#'>
+                                    <div className='icon-xnyh'></div>
+                                    <FormattedMessage id='homeheader.Medical_test'/>
+                                </a>
+                            </div>
+                            <div className='option-item'>
+                                <a href='#'>
+                                    <div className='icon-sktt'></div>
+                                    <FormattedMessage id='homeheader.Mental_health'/>
+                                </a>
+                            </div>
+                            <div className='option-item'>
+                                <a href='#'>
+                                    <div className='icon-knk'></div>
+                                    <FormattedMessage id='homeheader.Dental_examination'/>
+                                </a>
+                            </div>
+                            <div className='option-item'>
+                                <a href='#'>
+                                    <div className='icon-gpt'></div>
+                                    <FormattedMessage id='homeheader.Surgery_pack'/>
+                                </a>
+                            </div>
+                            <div className='option-item'>
+                                <a href='#'>
+                                    <div className='icon-spyt'></div>
+                                    <FormattedMessage id='homeheader.Medical_products'/>
+                                </a>
+                            </div>
+                            <div className='option-item'>
+                                <a href='#'>
+                                    <div className='icon-skdn'></div>
+                                    <FormattedMessage id='homeheader.Business_health'/>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div className='options'>
-                        <div className='option-item'>
-                            <a href='#'>
-                                <div className='icon-ck'></div>
-                                <FormattedMessage id='homeheader.examination_specialist'/>
-                            </a>
-                        </div>
-                        <div className='option-item'>
-                            <a href='#'>
-                                <div className='icon-ktx'></div>
-                                <FormattedMessage id='homeheader.Remote_examination'/>
-                            </a>
-                        </div>
-                        <div className='option-item'>
-                            <a href='#'>
-                                <div className='icon-ktq'></div>
-                                <FormattedMessage id='homeheader.General_examination'/>
-                            </a>
-                        </div>
-                        <div className='option-item'>
-                            <a href='#'>
-                                <div className='icon-xnyh'></div>
-                                <FormattedMessage id='homeheader.Medical_test'/>
-                            </a>
-                        </div>
-                        <div className='option-item'>
-                            <a href='#'>
-                                <div className='icon-sktt'></div>
-                                <FormattedMessage id='homeheader.Mental_health'/>
-                            </a>
-                        </div>
-                        <div className='option-item'>
-                            <a href='#'>
-                                <div className='icon-knk'></div>
-                                <FormattedMessage id='homeheader.Dental_examination'/>
-                            </a>
-                        </div>
-                        <div className='option-item'>
-                            <a href='#'>
-                                <div className='icon-gpt'></div>
-                                <FormattedMessage id='homeheader.Surgery_pack'/>
-                            </a>
-                        </div>
-                        <div className='option-item'>
-                            <a href='#'>
-                                <div className='icon-spyt'></div>
-                                <FormattedMessage id='homeheader.Medical_products'/>
-                            </a>
-                        </div>
-                        <div className='option-item'>
-                            <a href='#'>
-                                <div className='icon-skdn'></div>
-                                <FormattedMessage id='homeheader.Business_health'/>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         );
     }

@@ -1,5 +1,9 @@
 import actionTypes from './actionTypes';
-import { getTopDoctorHomeService, getAllDoctorService, saveDetailInforDoctorService } from '../../services/userService';
+import { getTopDoctorHomeService, 
+    getAllDoctorService, 
+    saveDetailInforDoctorService, 
+    getDetailInforDoctorByIdService
+} from '../../services/userService';
 import { toast } from 'react-toastify';
 
 export const addUserSuccess = () => ({
@@ -51,7 +55,7 @@ export const fetchAllDoctorStart = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getAllDoctorService();//lay du lieu
-            console.log('res all doctor', res);
+            console.log('res doctor by id', res);
             if( res && res.errCode === 0) {
                 dispatch(fetchAllDoctorSuccess(res.data));
             } else {
@@ -101,4 +105,32 @@ export const saveDetailInforDoctorSuccess = () => ({
 
 export const saveDetailInforDoctorFailed = () => ({
     type: actionTypes.SAVE_DETAIL_INFOR_DETAIL_FAILED
+})
+
+export const fetchDetailInforDoctorByIdStart = (id) => {
+    console.log('detail infor doctor by id',id)
+    return async (dispatch, getState) => {
+        try {
+            let res = await getDetailInforDoctorByIdService(id);//lay du lieu
+            console.log('res all doctor', res);
+            if( res && res.errCode === 0) {
+                dispatch(fetchDetailInforDoctorByIdSuccess(res.data));
+            } else {
+                dispatch(fetchDetailInforDoctorByIdFailed());
+            }
+        } catch (error) {
+            dispatch(fetchDetailInforDoctorByIdFailed())
+            console.log('fetchDetailInforDoctorByIdStart error:',error);
+            
+        }
+    }
+}
+
+export const fetchDetailInforDoctorByIdSuccess = (data) => ({
+    type: actionTypes.FETCH_DETAIL_INFOR_DOCTOR_BY_ID_SUCCESS,
+    data:data,
+})
+
+export const fetchDetailInforDoctorByIdFailed = () => ({
+    type: actionTypes.FETCH_DETAIL_INFOR_DOCTOR_BY_ID_FAILED
 })

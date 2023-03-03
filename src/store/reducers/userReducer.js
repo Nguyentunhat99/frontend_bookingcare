@@ -5,6 +5,7 @@ const initialState = {
     userInfo: null,
     doctorsData: '',
     AllDoctor: [],
+    dataDetailInforDoctorById: []
 }
 
 const userReducer = (state = initialState, action) => {
@@ -46,7 +47,17 @@ const userReducer = (state = initialState, action) => {
             state.AllDoctor = [];
             return {
                 ...state,
-            }            
+            }
+        case actionTypes.FETCH_DETAIL_INFOR_DOCTOR_BY_ID_SUCCESS:
+            state.dataDetailInforDoctorById = action.data;//luu data vao state copy
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_DETAIL_INFOR_DOCTOR_BY_ID_FAILED:
+            state.dataDetailInforDoctorById = [];
+            return {
+                ...state,
+            }             
         default:
             return state;
     }
