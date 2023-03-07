@@ -54,16 +54,17 @@ class DetailDoctor extends Component {
                             <div className='intro-doctor-content'>
                                 <div className='intro-doctor-image'
                                     style={{ backgroundImage:`url(${doctor.image})`}}
-                                ></div>
+                                >
+                                </div>
                                 <div className='intro-doctor-quickview'>
                                     <h1 className='intro-doctor-name'>
                                         {language === LANGUAGES.VI ? nameVi : nameEn}
                                     </h1>
-                                {doctor && doctor.Markdown && doctor.Markdown.description &&
-                                    <p className='intro-doctor-summary'>
-                                        {doctor.Markdown.description}
-                                    </p>
-                                }
+                                    {doctor && doctor.Markdown && doctor.Markdown.description &&
+                                        <p className='intro-doctor-summary'>
+                                            {doctor.Markdown.description}
+                                        </p>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -74,13 +75,12 @@ class DetailDoctor extends Component {
                                     <div dangerouslySetInnerHTML={{__html: doctor.Markdown.contentHTML}}></div>    
                                 }
                             </div>
-                                
                         </div>
                         <div className='feedback'>
                             OK
                         </div>
-                    <Footer />
                     </div>
+                    <Footer />
                 </div>
             );        
     }

@@ -18,6 +18,10 @@ export const adminMenu = [
             {
                 name: 'menu.admin.manage-admin', link: '/system/manage-admin'
             },
+            { //quản lý khám bệnh của bác sĩ
+                name: 'menu.doctor.manage-shedule', link: '/doctor/manage-shedule'
+                 
+            },
         ]
     },
     { //quản lý phòng khám 
@@ -44,4 +48,22 @@ export const adminMenu = [
             },
         ]
     },
+
+];
+
+export const doctorMenu = [
+    {
+        name: 'menu.admin.manage-user', 
+        menus: [
+            { //quản lý khám bệnh của bác sĩ
+                name: 'menu.doctor.manage-shedule', 
+                menus: [
+                    {
+                        name: 'menu.doctor.shedule', link: '/doctor/manage-shedule'
+                    },
+                ]
+            },
+        ]
+
+    }
 ];

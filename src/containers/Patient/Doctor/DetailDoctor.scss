@@ -1,7 +1,5 @@
 .detail-doctor-container {
-    height: 500px;
     margin-top: 76px;
-    border: 1px solid black;
     padding-top: 15px;
 
     .intro-doctor {
@@ -43,11 +41,26 @@
     }
     .detail-infor-doctor {
         border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
         background-color: #f9f9f9;
         .detail-infor-doctor-content {
             width: 1170px;
             padding: 15px;
             margin: 0 auto;
+
+            h2 {
+                font: 16px/1.5 'Montserrat', sans-serif;
+                font-weight: 500;
+            }
+
+            ul {
+                font: 14px/1.5 'Montserrat', sans-serif;
+                color: #7c7c7c;
+            }
+
+            img {
+                width: 100%;
+            }
         }
     }
     .feedback {

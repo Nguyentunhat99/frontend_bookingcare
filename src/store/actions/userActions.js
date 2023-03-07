@@ -2,7 +2,8 @@ import actionTypes from './actionTypes';
 import { getTopDoctorHomeService, 
     getAllDoctorService, 
     saveDetailInforDoctorService, 
-    getDetailInforDoctorByIdService
+    getDetailInforDoctorByIdService,
+    editMarkdownService
 } from '../../services/userService';
 import { toast } from 'react-toastify';
 
@@ -134,3 +135,34 @@ export const fetchDetailInforDoctorByIdSuccess = (data) => ({
 export const fetchDetailInforDoctorByIdFailed = () => ({
     type: actionTypes.FETCH_DETAIL_INFOR_DOCTOR_BY_ID_FAILED
 })
+
+
+
+export const editMarkdownStart = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await editMarkdownService(data);//lay du lieu
+            console.log('res all doctor', res);
+            if( res && res.errCode === 0) {
+                toast.success(res.errMessage);
+                dispatch(editMarkdownSuccess());
+            } else {
+                toast.error(res.errMessage);
+                dispatch(editMarkdownFailed());
+            }
+        } catch (error) {
+            dispatch(editMarkdownFailed())
+            console.log('editMarkdownStart error:',error);
+            
+        }
+    }
+}
+
+export const editMarkdownSuccess = () => ({
+    type: actionTypes.FETCH_DETAIL_INFOR_DOCTOR_BY_ID_SUCCESS,
+})
+
+export const editMarkdownFailed = () => ({
+    type: actionTypes.FETCH_DETAIL_INFOR_DOCTOR_BY_ID_FAILED
+})
+

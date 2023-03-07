@@ -36,7 +36,7 @@ class UserRedux extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {//cap nhat state
-        // /render => didupdate
+        // render => didupdate
         // hien taau (this) va qua khu (previous)
         //[] [3] trc khi render
 

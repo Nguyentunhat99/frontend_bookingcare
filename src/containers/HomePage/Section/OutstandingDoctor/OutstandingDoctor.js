@@ -37,9 +37,13 @@ class OutstandingDoctor extends Component {
             })
         }
     }
+
     handleViewDeatilDoctor= (doctor) => {
-        this.props.history.push(`/detail-doctor/${doctor.id}`); 
+        if(this.props.history){
+            this.props.history.push(`/detail-doctor/${doctor.id}`); 
+        }
     }
+    
     render() {
         let settings = {
             dots: false,

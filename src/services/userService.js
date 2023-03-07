@@ -50,4 +50,9 @@ export const getDetailInforDoctorByIdService = (id) => {
     console.log('detail infor doctor by id:',id);
     return axios.get(`/api/v1/get-detail-infor-doctor-by-id?id=${id}`)
 }
+
+export const editMarkdownService = (data) => {
+    console.log('detail infor doctor by data:',data);
+    return axios.put('/api/v1/edit-markdown', data)
+}
 //Call api
