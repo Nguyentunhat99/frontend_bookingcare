@@ -55,4 +55,9 @@ export const editMarkdownService = (data) => {
     console.log('detail infor doctor by data:',data);
     return axios.put('/api/v1/edit-markdown', data)
 }
+
+export const bulkCreateScheduleService = (data) => {
+    console.log('data:',data);
+    return axios.post('/api/v1/bulk-create-schedule', data)
+}
 //Call api

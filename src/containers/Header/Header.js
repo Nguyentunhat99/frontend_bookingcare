@@ -8,6 +8,7 @@ import './Header.scss';
 import { LANGUAGES, USER_ROLE } from '../../utils';
 import { FormattedMessage } from 'react-intl';
 import _ from 'lodash';
+import images from '../../assets/images';
 
 class Header extends Component {
 
@@ -21,8 +22,8 @@ class Header extends Component {
     this.props.changeLanguageAppRedux(language);//truy cap hafm cua redux thong qua cau lenh this.props 
     }
 
-    componentDidMount(){
-        let { userInfo } = this.props;
+    componentDidMount(){//phan quyen menu
+        let { userInfo } = this.props;//redux
         console.log('userInfo', userInfo);
         let menu = [];
         if (userInfo && !_.isEmpty(userInfo)) {
@@ -54,10 +55,14 @@ class Header extends Component {
                         , {userInfo && userInfo.firstName ? userInfo.firstName : ""} !</span>
                     <span
                         className={language === LANGUAGES.VI ? 'language-vn active' : 'language-vn'}                       
-                        onClick={() =>{this.changeLanguage(LANGUAGES.VI)}}>VN</span>
+                        onClick={() =>{this.changeLanguage(LANGUAGES.VI)}}>
+                        <img src={images.vn} alt='vn' width='22'/>
+                    </span>
                     <span
                         className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'}
-                        onClick={() =>{this.changeLanguage(LANGUAGES.EN)}}>EN</span>
+                        onClick={() =>{this.changeLanguage(LANGUAGES.EN)}}>
+                        <img src={images.en} alt='en' width='22'/>
+                    </span>
                     <div className="btn btn-logout" onClick={processLogout} title='Log out'>
                         <i className="fas fa-sign-out-alt"></i>
                     </div>

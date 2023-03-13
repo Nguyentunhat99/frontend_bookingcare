@@ -3,7 +3,8 @@ import { getTopDoctorHomeService,
     getAllDoctorService, 
     saveDetailInforDoctorService, 
     getDetailInforDoctorByIdService,
-    editMarkdownService
+    editMarkdownService,
+    bulkCreateScheduleService
 } from '../../services/userService';
 import { toast } from 'react-toastify';
 
@@ -95,7 +96,6 @@ export const saveDetailInforDoctorStart = (data) => {
         } catch (error) {
             dispatch(saveDetailInforDoctorFailed())
             console.log('saveDetailInforDoctorStart error:',error);
-            
         }
     }
 }
@@ -136,8 +136,6 @@ export const fetchDetailInforDoctorByIdFailed = () => ({
     type: actionTypes.FETCH_DETAIL_INFOR_DOCTOR_BY_ID_FAILED
 })
 
-
-
 export const editMarkdownStart = (data) => {
     return async (dispatch, getState) => {
         try {
@@ -166,3 +164,31 @@ export const editMarkdownFailed = () => ({
     type: actionTypes.FETCH_DETAIL_INFOR_DOCTOR_BY_ID_FAILED
 })
 
+export const bulkCreateScheduleStart = (data) => {
+    return async (dispatch, getState) => {
+        console.log(data);
+        try {
+            let res = await bulkCreateScheduleService(data);//lay du lieu
+            console.log('res all doctor', res);
+            if( res && res.errCode === 0) {
+                toast.success(res.errMessage);
+                dispatch(bulkCreateScheduleSuccess());
+            } else {
+                toast.error(res.errMessage);
+                dispatch(bulkCreateScheduleFailed());
+            }
+        } catch (error) {
+            dispatch(bulkCreateScheduleFailed())
+            console.log('bulkCreateScheduleStart error:',error);
+            
+        }
+    }
+}
+
+export const bulkCreateScheduleSuccess = () => ({
+    type: actionTypes.BULK_CREATE_SCHEDULE_SUCCESS,
+})
+
+export const bulkCreateScheduleFailed = () => ({
+    type: actionTypes.BULK_CREATE_SCHEDULE_FAILED
+})

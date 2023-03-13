@@ -91,28 +91,30 @@
                 color: #45c3d2;
                 
                 span {
-                    margin: 5px;
-                    padding: 10px 0px 10px 10;
+                    margin-left: 5px;
+                    padding: 5px 0px 5px 0px;
                     cursor: pointer;
 
                 }
                 .language-vn {
-                    &:hover {
-                        color: #f7d800;
+                    padding: 5px;
+                    border-radius: 50%;
+                    img {
+                        border-radius: 50%;
                     }
                     &.active {
-                        color: #171717;
-                        font-weight: bold;
+                        background-color: #ffd900;
                     }
                 }
 
                 .language-en {
-                    &:hover {
-                        color: #f7d800;
+                    padding: 5px;
+                    border-radius: 50%;
+                    img {
+                        border-radius: 50%;
                     }
                     &.active {
-                        color: #171717;
-                        font-weight: bold;
+                        background-color: #ffd900;
                     }
                 }
             }

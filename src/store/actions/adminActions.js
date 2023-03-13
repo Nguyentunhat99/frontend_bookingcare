@@ -205,3 +205,32 @@ export const editUserSuccess = () => ({
 export const editUserFailed = () => ({
     type: actionTypes.EDIT_USER_FAILED
 })
+
+
+
+export const fetchHourStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllCodeService("TIME");//lay du lieu
+            console.log('check res', res);
+            if( res && res.errCode === 0) {
+                dispatch(fetchHourSuccess(res.data));
+            } else {
+                dispatch(fetchHourFailed());
+            }
+        } catch (error) {
+            dispatch(fetchHourFailed())
+            console.log('fetchHourStart error:',error);
+            
+        }
+    }
+}
+
+export const fetchHourSuccess = (hour) => ({
+    type: actionTypes.FETCH_HOUR_SUCCESS,
+    data: hour,
+})
+
+export const fetchHourFailed = () => ({
+    type: actionTypes.FETCH_HOUR_FAILED
+})

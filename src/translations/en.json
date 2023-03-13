@@ -73,7 +73,17 @@
       "Add_new_user": "Add new user"
     },
     "doctor": {
-      "manage-shedule": "Manage Doctor's schedule"
+      "manage-schedule": "Manage Doctor's schedule"
     }
+  },
+  "manage-schedule": {
+    "title": "Manage doctor's appointment schedule",
+    "choose_a_doctor": "Choose a doctor",
+    "choose_date": "Choose date",
+    "choose_hour": "Choose hour",
+    "invalid_date": "Invalid selected date !",
+    "invalid_doctor": "Invalid selected doctor !",
+    "invalid_hour": "Invalid selected hour !",
+    "save": "Submit"
   }
 }

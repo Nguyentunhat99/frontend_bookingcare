@@ -31,7 +31,6 @@
             padding: 0;
             .menu {
                 width: 100%;
-                padding: 0 15px;
                 height: 35px;
                 line-height: 35px;
                 text-transform: none;
@@ -50,6 +49,8 @@
                 .menu-link {
                     text-decoration: none;
                     color: $text-in-light;
+                    display: block;
+                    padding: 0 15px;
                 }
                 .sub-menu-list {
                     display: none;

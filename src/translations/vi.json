@@ -73,7 +73,18 @@
       "Add_new_user": "Thêm người dùng mới"
     },
     "doctor": {
-      "manage-shedule": "QL kế hoạch khám bệnh"
+      "manage-schedule": "QL kế hoạch khám bệnh"
     }
+  },
+  "manage-schedule": {
+    "title": "Quản lý lịch khám bệnh của bác sĩ",
+    "choose_a_doctor": "Chọn bác sĩ",
+    "choose_hour": "Chọn giờ",
+    "choose_date": "Chọn ngày",
+    "invalid_container": "Bạn chưa chọn những thứ trên",
+    "invalid_date": "Chua có ngày !",
+    "invalid_doctor": "Chưa chọn bác sĩ !",
+    "invalid_hour": "Chưa chọn giờ !",
+    "save": "Xong"
   }
 }
